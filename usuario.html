@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Usuario</title>
+    <link rel="stylesheet" href="css/usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#agente">Agente</a></li>
+                <li><a href="/login.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="general">
+        <h2>San Jacinto Bolivar</h2>
+        <div class="catalogo-section">
+            <div class="catalogo-clase">
+                <h3>Festival de la Gaita</h3>
+                <div class="catalogo-galeria">
+                    <img src="img/señor tocando instrumento.jpeg" alt="Caribe 1" class="active">
+                    <img src="img/gaita bailante.jpeg" alt="Caribe 2">
+                    <img src="img/gaita de san jacinto.jpeg" alt="Caribe 3">
+                </div>
+                <p class="descripcion">Descubre las maravillas que este destino tiene para ti.</p>
+            </div>
+        </div>
+
+        <h2>El Carmen de Bolivar</h2>
+        <div class="catalogo-section">
+            <div class="catalogo-clase">
+                <h3>Cerro de la Casona</h3>
+                <div class="catalogo-galeria">
+                    <img src="img/la casona.jpeg" alt="cerro de la cansona" class="active">
+                    <img src="img/la cansona.jpg" alt="la cansona.jpg">
+                    <img src="img/cerro.jpg" alt="cerro la cansona">
+                </div>
+                <p class="descripcion">Explora la naturaleza en este magnifico destino.</p>
+            </div>
+        </div>
+
+        <h2>San Juan Neppomuceno</h2>
+        <div class="catalogo-section">
+            <div class="catalogo-clase">
+                <h3>Parque Natural Los Colorados</h3>
+                <div class="catalogo-galeria">
+                    <img src="img/los colorados.jpeg" alt="Los colorados" class="active">
+                    <img src="img/los colorados 1.jpeg" alt="los colorados 1">
+                    <img src="img/los colorados 2.jpeg" alt="Caribe 3">
+                </div>
+                <p class="descripcion">No puedes dejar de visitar este destino y vivir la variedad de biodiversidad que tiene para ti.</p>
+            </div>
+        </div>
+
+        <h2>Catálogo de Viajes</h2>
+        <div class="catalogo-section">
+            <div class="catalogo-clase">
+                <h3>Fiestas de la Virgen del Carmen</h3>
+                <div class="catalogo-galeria">
+                    <img src="img/fiesta virgen.jpg" alt="fiesta virgen" class="active">
+                    <img src="img/fiesta virgen 1.jpg" alt="fiesta virgen 1">
+                    <img src="img/fiesta virgen 2.jpg" alt="fiesta virgen 2">
+                </div>
+                <p class="descripcion">Una experiencias religiosa, que te llena de fe y amor.</p>
+            </div>
+        </div>
+
+        <h2>San Juan Nepomuceno</h2>
+        <div class="catalogo-section">
+            <div class="catalogo-clase">
+                <h4>Festival del Ñame en San Cayetano</h4>
+                <div class="catalogo-galeria">
+                    <img src="img/vereda de toro.jpeg" alt="vereda de toro" class="active">
+                    <img src="img/festival.jpeg" alt="festival del ñame">
+                    <img src="img/dulce de name.jpeg" alt="Dulce de ñame">
+                </div>
+                <p class="descripcion">Un festival lleno de cultura y tradicion con lo mejor del ñame.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="agente-section" id="agente">
+        <h2>Reserva</h2>
+        <div class="agente-details">
+            <p><strong>Nombre:</strong> Juan Diaz</p>
+            <p><strong>Teléfono:</strong> 605-342-8956</p>
+            <p><strong>Correo:</strong> agente@descubremontesdemaria.com</p>
+        </div>
+        <div class="form-section">
+            <label for="mensaje">Deja un mensaje:</label>
+            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <button>Enviar</button>
+        </div>
+    </section>
+    
+    
+        <footer class="footer">
+        <div class="footer-content container">
+            <div class="social-media">
+                <h3>Síguenos en nuestras redes sociales</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <img src="img/icono de facebook.png" alt="Facebook" />
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="img/icono de instagram.png" alt="Instagram" />
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <img src="img/icono de youtube.png" alt="YouTube" />
+                    </a>
+                </div>
+            </div>
+    
+            <div class="quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                </ul>
+            </div>
+    
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:contacto@.com">contacto@descubremontesdemaria.com</a></p>
+                <p>Teléfono: <a href="tel:+1234567890">+57 324 567 8900</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Rotación de imágenes
+        document.querySelectorAll('.catalogo-galeria').forEach(galeria => {
+            let index = 0;
+            const images = galeria.querySelectorAll('img');
+            setInterval(() => {
+                images[index].classList.remove('active');
+                index = (index + 1) % images.length;
+                images[index].classList.add('active');
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
