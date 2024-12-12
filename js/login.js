@@ -10,21 +10,28 @@ form.addEventListener("submit", async (event) => {
     email : dataForm.get("email"),
     password : dataForm.get("password")
   }
-  if (dataUser.email && dataUser.password) {
+  try {
+    const response = await fetch("https://fast-api-login.vercel.app/login/",{
+      method : 'POST',
+      headers : {
+        "Content-Type" : 'application/json'
+      },
+      body : JSON.stringify(dataUser)
+    })
     
-    if (dataUser.email === localStorage.getItem('email', dataUser.email) && dataUser.password === localStorage.getItem('password', dataUser.password)){
-      loginBtn.innerText= 'Iniciando Sesion...'
+    const data = await response
+    
+    if (response.ok) {
+      loginBtn.innerText = "Iniciando Sesion..."
       setTimeout(function() {
-        window.location.href = '/usuario.html'
-      }, 2000);
-
-    }
-    
-    else {
-      alert("datos invalidos")
-    }
+        window.location.href = "/usuario.html"
+      }, 3000);
       
     } else {
-      console.log("Todos los campos son obligatorios.");
+      alert("Error de Conexion")
+      console.log(data)
     }
+  } catch (e) {
+    console.log(e)
+  }
 } )
