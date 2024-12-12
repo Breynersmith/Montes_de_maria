@@ -1,39 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById("registration-form");
+ const form = document.getElementById("registration-form");
 
-  let btnSignup = document.getElementById("signUp");
-  let btnSignin = document.getElementById("signIn");
-  let nameInput = document.getElementById("name");  
-  let title = document.getElementById('title');
+let btnSignup = document.getElementById("signUp");
+let btnSignin = document.getElementById("signIn");
+let nameInput = document.getElementById("name");  
+let title = document.getElementById('title');
 
-  //-----------------------------------//
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+
+//-----------------------------------//
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  
+  const dataForm = new FormData(form);
+  
+  const dataUser = {
+    username: dataForm.get('name'),
+    email: dataForm.get('email'),
+    phone: dataForm.get('phone'),
+    password: dataForm.get('password')
+  };
+  
+  try {
+    const response = await fetch('https://fast-api-login.vercel.app/register', {
+      method: 'POST',
+      headers: { 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dataUser)
+    });
     
-    const dataForm = new FormData(form);
+    const data = await response.json();
     
-    const dataUser = {
-      username: dataForm.get('name'),
-      email: dataForm.get('email'),
-      phone: dataForm.get('phone'),
-      password: dataForm.get('password')
-    };
-    
-    if (dataUser.username && dataUser.email && dataUser.phone && dataUser.password) {
-      localStorage.setItem('username', dataUser.username);
-      localStorage.setItem('email', dataUser.email);
-      localStorage.setItem('phone', dataUser.phone);
-      localStorage.setItem('password', dataUser.password);
-      
-      btnSignup.innerText= 'Registro Exitoso'
+    if (response.ok) {
+      btnSignup.innerText = 'Registro exitoso';
       setTimeout(function() {
-        window.location.href = '/login.html#general-login'
+        window.location.href = "/login.html"
       }, 2000);
-
-      console.log(localStorage.getItem('username'));
     } else {
-      console.log("Todos los campos son obligatorios.");
+      alert(`Error ${data.detail}`);
     }
-  });
+  } catch (error) {
+    console.error('Error de conexión:', error.message);
+    alert("Error de conexión. Vuelve a intentarlo. ");
+  }
 });
+});
+
+
+
+                          
